@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>Page Profil</h1>
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.name }}, <a href="{{ path('app_logout') }}">deconnexion</a>
+        </div>
+    {% endif %}
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-danger"><a href="">Mon profil</a></button>
+        <button type="button" class="btn btn-warning"><a href="{{path('app_order2_index')}}">Mes commandes</a></button>
+        <button type="button" class="btn btn-success"><a href="{{path('app_order2_new')}}">Nouvelle commande</a></button>
+        <button type="button" class="btn btn-danger"><a href="{{ path('app_login')}}">Se connecter</a></button>
+        <button type="button" class="btn btn-warning"><a href="{{ path('app_register') }}">Créer un nouveau profil utilisateur</a></button>
+        <button type="button" class="btn btn-success"><a href=""></a></button>
+    </div>
+
+{% endblock %}
